@@ -1,0 +1,64 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "nonebot-plugin-livetennis"
+version = "0.1.0"
+description = "NoneBot2 plugin: live tennis scores, today's fixtures and player rankings (ATP, WTA, Challenger, ITF, juniors) via the Live Tennis API / 实时网球比分、今日赛程与球员排名"
+readme = "README.md"
+license = { text = "MIT" }
+authors = [{ name = "Live Tennis API", email = "hello@livetennisapi.com" }]
+requires-python = ">=3.9"
+keywords = ["nonebot", "nonebot2", "tennis", "live-scores", "atp", "wta", "网球"]
+classifiers = [
+  "Development Status :: 4 - Beta",
+  "Framework :: Robot Framework",
+  "License :: OSI Approved :: MIT License",
+  "Operating System :: OS Independent",
+  "Programming Language :: Python :: 3",
+  "Topic :: Communications :: Chat",
+]
+dependencies = [
+  "nonebot2>=2.2.0,<3.0.0",
+  "httpx>=0.24.0",
+  "pydantic>=1.10.0",
+]
+
+[project.urls]
+Homepage = "https://github.com/livetennisapi/nonebot-plugin-livetennis"
+Repository = "https://github.com/livetennisapi/nonebot-plugin-livetennis"
+Documentation = "https://docs.livetennisapi.com"
+"Bug Tracker" = "https://github.com/livetennisapi/nonebot-plugin-livetennis/issues"
+
+[dependency-groups]
+dev = [
+  "nonebug>=0.4.0",
+  "nonebot-adapter-onebot>=2.4.0",
+  "pytest>=8.0.0",
+  "pytest-asyncio>=0.23.0",
+  "respx>=0.21.0",
+  "ruff>=0.6.0",
+]
+
+[tool.hatch.build.targets.wheel]
+packages = ["nonebot_plugin_livetennis"]
+
+[tool.hatch.build.targets.sdist]
+include = ["nonebot_plugin_livetennis", "tests", "README.md", "LICENSE"]
+
+[tool.pytest.ini_options]
+asyncio_mode = "auto"
+addopts = "-q"
+
+[tool.ruff]
+line-length = 88
+target-version = "py39"
+
+[tool.ruff.lint]
+select = ["F", "E", "W", "UP", "ASYNC", "C4", "T10", "T20", "PT", "Q", "RUF"]
+ignore = [
+  "RUF001", # ambiguous-unicode-character-string (zh-CN punctuation)
+  "RUF002", # ambiguous-unicode-character-docstring
+  "RUF003", # ambiguous-unicode-character-comment
+]
