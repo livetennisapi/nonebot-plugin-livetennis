@@ -8,7 +8,7 @@ version = "0.1.0"
 description = "NoneBot2 plugin: live tennis scores, today's fixtures and player rankings (ATP, WTA, Challenger, ITF, juniors) via the Live Tennis API / 实时网球比分、今日赛程与球员排名"
 readme = "README.md"
 license = { text = "MIT" }
-authors = [{ name = "Live Tennis API", email = "hello@livetennisapi.com" }]
+authors = [{ name = "Synapse Research Ltd", email = "hello@livetennisapi.com" }]
 requires-python = ">=3.9"
 keywords = ["nonebot", "nonebot2", "tennis", "live-scores", "atp", "wta", "网球"]
 classifiers = [
@@ -30,6 +30,7 @@ Homepage = "https://github.com/livetennisapi/nonebot-plugin-livetennis"
 Repository = "https://github.com/livetennisapi/nonebot-plugin-livetennis"
 Documentation = "https://docs.livetennisapi.com"
 "Bug Tracker" = "https://github.com/livetennisapi/nonebot-plugin-livetennis/issues"
+Author = "https://synapsereality.io"
 
 [dependency-groups]
 dev = [

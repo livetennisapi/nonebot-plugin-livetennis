@@ -30,7 +30,7 @@ __plugin_meta__ = PluginMetadata(
     config=Config,
     supported_adapters=None,
     extra={
-        "author": "Live Tennis API <hello@livetennisapi.com>",
+        "author": "Synapse Research Ltd <hello@livetennisapi.com>",
         "version": "0.1.0",
     },
 )
