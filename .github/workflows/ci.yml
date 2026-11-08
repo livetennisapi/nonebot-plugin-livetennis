@@ -28,6 +28,12 @@ jobs:
       - uses: actions/setup-python@v7
         with:
           python-version: ${{ matrix.python-version }}
+          # pip's download cache, keyed on pyproject.toml. The install
+          # below pulled ~65 wheels from cold on every run (14s on the
+          # 3.10 leg, the slowest check a PR waits on). Resolution still
+          # runs on every job, so the same versions install as before.
+          cache: pip
+          cache-dependency-path: pyproject.toml
       - run: pip install -e . nonebug respx pytest pytest-asyncio nonebot-adapter-onebot
       - run: pytest
 
